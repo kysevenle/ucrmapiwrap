@@ -8,4 +8,5 @@ setup(name='UCRMApiWrap',
       url='https://github.com/kysevenle/ucrmapiwrap',
       packages=['ucrmapiwrap', ],
       package_dir={'ucrmapiwrap': 'ucrmapiwrap'},
-      include_package_data=True,)
+      include_package_data=True,
+      install_requires=['requests'])
