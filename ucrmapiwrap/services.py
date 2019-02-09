@@ -9,7 +9,7 @@ class Services:
         self.headers = {'Content-Type': 'application/json',
                         'x-Auth-App-Key': config.WRITE_KEY}
 
-    def get_list_of_services(self, params=None):
+    def get_services_list(self, params=None):
         return requests.get(self.url, headers=self.headers, params=params)
 
     def get_service_by_id(self, id):
