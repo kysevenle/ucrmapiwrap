@@ -3,7 +3,7 @@ import requests
 from ucrmapiwrap.config_reader import config
 
 
-class Services:
+class UCRMServices:
     def __init__(self, params=None):
         self.url = config.BASE_URL + 'clients/services'
         self.headers = {'Content-Type': 'application/json',
