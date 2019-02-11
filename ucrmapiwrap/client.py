@@ -1,4 +1,13 @@
+import requests
+
+from ucrmapiwrap.config_reader import config
+
+
 class Client():
+    url = config.BASE_URL + 'clients'
+    headers = {'Content-Type': 'application/json',
+               'x-Auth-App-Key': config.WRITE_KEY}
+
     def __init__(self, id, userIdent, previousIsp, isLead, clientType, companyName,
                  companyRegistrationNumber, companyTaxId, companyWebsite, street1,
                  street2, city, countryId, stateId, zipCode, invoiceStreet1,
@@ -63,3 +72,14 @@ class Client():
         self.addressGpsLat = addressGpsLat
         self.addressGpsLon = addressGpsLon
         self.isArchived = isArchived
+
+    @classmethod
+    def from_api(cls, id):
+        url = f'{cls.url}/{id}'
+        response = requests.get(url, headers=cls.headers)
+        if response.status_code == 200:
+            return cls(**response.json())
+
+
+client1 = Client.from_api(1)
+print(client1.userIdent)
