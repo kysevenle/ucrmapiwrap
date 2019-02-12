@@ -1,0 +1,25 @@
+import json
+import pytest
+
+from pathlib import Path
+
+from ucrmapiwrap.services import UCRMServices
+
+
+@pytest.fixture
+def service_from_api():
+    service = UCRMServices(params={'limit': 1})._services_list[0]
+    return [*service]
+
+
+@pytest.fixture
+def service_from_json():
+    cur_dir = Path(__file__).parent
+    file_name = f'{cur_dir}\\call_structs\\service.json'
+    with open(file_name, 'r') as file:
+        data = json.load(file)
+    return [*data]
+
+
+def test_service_structure(service_from_api, service_from_json):
+    assert service_from_api == service_from_json
