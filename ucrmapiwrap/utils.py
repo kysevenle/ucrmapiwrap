@@ -26,9 +26,9 @@ def update_service_structs():
 
 
 def update_device_structs():
-    service = UCRMDevices()._devices_list[0]
-    service_struct = {k: None for k in service}
+    device = UCRMDevices()._devices_list[0]
+    device_struct = {k: None for k in device}
     curdir = Path(__file__).parent
-    file_name = f'{curdir}\\tests\\call_structs\\service.json'
+    file_name = f'{curdir}\\tests\\call_structs\\device.json'
     with open(file_name, 'w') as file:
-        json.dump(service_struct, file)
+        json.dump(device_struct, file)
