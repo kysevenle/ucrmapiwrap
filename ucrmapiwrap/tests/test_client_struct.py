@@ -8,7 +8,7 @@ from ucrmapiwrap.clients import UCRMClients
 
 @pytest.fixture
 def client_from_api():
-    client = UCRMClients()._clients_list[0]
+    client = UCRMClients(params={'limit': 1})._clients_list[0]
     return [*client]
 
 
