@@ -79,7 +79,3 @@ class Client():
         response = requests.get(url, headers=cls.headers)
         if response.status_code == 200:
             return cls(**response.json())
-
-
-client1 = Client.from_api(1)
-print(client1.userIdent)
