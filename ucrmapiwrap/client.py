@@ -3,7 +3,7 @@ import requests
 from ucrmapiwrap.config_reader import config
 
 
-class Client():
+class UCRMClient():
     url = config.BASE_URL + 'clients'
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}

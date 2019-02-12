@@ -1,6 +1,6 @@
 import requests
 
-from ucrmapiwrap.client import Client
+from ucrmapiwrap.client import UCRMClient
 from ucrmapiwrap.config_reader import config
 
 
@@ -20,7 +20,7 @@ class UCRMClients:
 
     def __iter__(self):
         for client in self._clients_list:
-            yield Client(**client)
+            yield UCRMClient(**client)
 
     def __len__(self):
         return len(self._clients_list)

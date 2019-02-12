@@ -3,7 +3,7 @@ import requests
 from ucrmapiwrap.config_reader import config
 
 
-class Device:
+class UCRMDevice:
     url = config.BASE_URL + 'devices'
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}

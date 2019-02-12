@@ -3,7 +3,7 @@ import requests
 from ucrmapiwrap.config_reader import config
 
 
-class ServiceDevice:
+class UCRMServiceDevice:
     url = config.BASE_URL + 'clients/services/service_devices/'
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
