@@ -1,7 +1,7 @@
 import requests
 
 from ucrmapiwrap.config_reader import config
-from ucrmapiwrap.service import Service
+from ucrmapiwrap.service import UCRMService
 
 
 class UCRMServices:
@@ -20,7 +20,7 @@ class UCRMServices:
 
     def __iter__(self):
         for service in self._services_list:
-            yield Service(**service)
+            yield UCRMService(**service)
 
     def __len__(self):
         return len(self._services_list)
