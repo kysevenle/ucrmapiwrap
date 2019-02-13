@@ -1,5 +1,5 @@
 class Service():
-    def __init__(self, id, clientId, status, name, street1, street2, city, countryId,
+    def __init__(self, *, id, clientId, status, name, street1, street2, city, countryId,
                  stateId, zipCode, note, addressGpsLat, addressGpsLon, servicePlanId,
                  servicePlanPeriodId, price, hasIndividualPrice, totalPrice, currencyCode,
                  invoiceLabel, contractId, contractLengthType,

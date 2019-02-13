@@ -8,10 +8,10 @@ class UCRMServiceDevice:
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
 
-    def __init__(self, interfaceId, vendorId, ipRange, macAddress, loginUsername, sshPort,
-                 sendPingNotifications, pingNotificationUserId, createPingStatistics,
-                 createSignalStatistics, qosEnabled, qosDeviceIds, id, serviceId,
-                 loginPassword):
+    def __init__(self, *, interfaceId, vendorId, ipRange, macAddress, loginUsername,
+                 sshPort, sendPingNotifications, pingNotificationUserId,
+                 createPingStatistics, createSignalStatistics, qosEnabled, qosDeviceIds,
+                 id, serviceId, loginPassword):
         self.interfaceId = interfaceId
         self.vendorId = vendorId
         self.ipRange = ipRange

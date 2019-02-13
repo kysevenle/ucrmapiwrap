@@ -8,7 +8,7 @@ class UCRMClient():
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
 
-    def __init__(self, id, userIdent, previousIsp, isLead, clientType, companyName,
+    def __init__(self, *, id, userIdent, previousIsp, isLead, clientType, companyName,
                  companyRegistrationNumber, companyTaxId, companyWebsite, street1,
                  street2, city, countryId, stateId, zipCode, invoiceStreet1,
                  invoiceStreet2, invoiceCity, invoiceStateId, invoiceCountryId,
