@@ -1,1 +1,1 @@
-{"url": null, "headers": null, "_service_devices_list": null, "errors": null}
+{"interfaceId": null, "vendorId": null, "ipRange": null, "macAddress": null, "loginUsername": null, "sshPort": null, "sendPingNotifications": null, "pingNotificationUserId": null, "createPingStatistics": null, "createSignalStatistics": null, "qosEnabled": null, "qosDeviceIds": null, "id": null, "serviceId": null, "loginPassword": null}
