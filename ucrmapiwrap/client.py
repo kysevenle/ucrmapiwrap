@@ -1,9 +1,8 @@
-import requests
-
+from ucrmapiwrap.base import UCRMBase
 from ucrmapiwrap.config_reader import config
 
 
-class UCRMClient():
+class UCRMClient(UCRMBase):
     url = config.BASE_URL + 'clients'
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
@@ -72,13 +71,6 @@ class UCRMClient():
         self.addressGpsLat = addressGpsLat
         self.addressGpsLon = addressGpsLon
         self.isArchived = isArchived
-
-    @classmethod
-    def from_api(cls, id):
-        url = f'{cls.url}/{id}'
-        response = requests.get(url, headers=cls.headers)
-        if response.status_code == 200:
-            return cls(**response.json())
 
     def __repr__(self):
         return str(vars(self))
