@@ -1,7 +1,11 @@
 import requests
 
+from ucrmapiwrap.config_reader import config
+
 
 class UCRMBase:
+    headers = {'Content-Type': 'application/json',
+               'x-Auth-App-Key': config.WRITE_KEY}
 
     @classmethod
     def get(cls, id):
