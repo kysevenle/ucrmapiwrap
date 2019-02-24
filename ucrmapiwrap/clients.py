@@ -14,7 +14,7 @@ class UCRMClients:
 
         response = requests.get(self.url, headers=self.headers, params=params)
         if response.status_code == 200:
-            self._clients_list = [UCRMClient(**client) for client in response.json]
+            self._clients_list = [UCRMClient(**client) for client in response.json()]
         else:
             self.errors = response.json()
 
