@@ -8,16 +8,16 @@ class UCRMDevice:
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
 
-    def __init__(self, *, id, name, siteId, vendorId, modelName, parentsId, notes,
+    def __init__(self, *, id, name, siteId, vendorId, modelName, parentIds, notes,
                  loginUsername, sshPort, snmpCommunity, osVersion, isGateway,
-                 isSuspendEnabled, sendPingNotifictions, pingNotificationUserId,
+                 isSuspendEnabled, sendPingNotifications, pingNotificationUserId,
                  createSignalStatistics):
         self.id = id
         self.name = name
         self.siteId = siteId
         self.vendorId = vendorId
         self.modelName = modelName
-        self.parentsId = parentsId
+        self.parentIds = parentIds
         self.notes = notes
         self.loginUsername = loginUsername
         self.sshPort = sshPort
@@ -25,7 +25,7 @@ class UCRMDevice:
         self.osVersion = osVersion
         self.isGateway = isGateway
         self.isSuspendEnabled = isSuspendEnabled
-        self.sendPingNotifictions = sendPingNotifictions
+        self.sendPingNotifications = sendPingNotifications
         self.pingNotificationUserId = pingNotificationUserId
         self.createSignalStatistics = createSignalStatistics
 
