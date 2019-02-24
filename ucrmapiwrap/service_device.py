@@ -34,3 +34,6 @@ class UCRMServiceDevice:
         response = requests.get(url, headers=cls.headers)
         if response.status_code == 200:
             return cls(**response.json())
+
+    def __repr__(self):
+        return str(vars(self))
