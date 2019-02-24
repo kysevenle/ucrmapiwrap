@@ -5,8 +5,8 @@ from ucrmapiwrap.service_device import UCRMServiceDevice
 
 
 class UCRMServiceDevices:
-    def __init__(self, id):
-        self.url = f'{config.BASE_URL}clients/services/{id}/service-devices'
+    def __init__(self, service_id):
+        self.url = f'{config.BASE_URL}clients/services/{service_id}/service-devices'
         self.headers = {'Content-Type': 'application/json',
                         'x-Auth-App-Key': config.WRITE_KEY}
         self._service_devices_list = []
