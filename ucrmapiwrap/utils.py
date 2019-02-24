@@ -37,7 +37,7 @@ def update_device_structs():
 
 def update_service_device_structs():
     service = UCRMServices(params={'limit': 1})[0]
-    service_device = UCRMServiceDevices(service.id)
+    service_device = UCRMServiceDevices(service.id)[0]
     service_device_struct = {k: None for k in vars(service_device)}
     curdir = Path(__file__).parent
     file_name = f'{curdir}\\tests\\call_structs\\service_device.json'
