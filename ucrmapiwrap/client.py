@@ -4,8 +4,6 @@ from ucrmapiwrap.config_reader import config
 
 class UCRMClient(UCRMBase):
     url = config.BASE_URL + 'clients'
-    headers = {'Content-Type': 'application/json',
-               'x-Auth-App-Key': config.WRITE_KEY}
 
     def __init__(self, *, id, userIdent, previousIsp, isLead, clientType, companyName,
                  companyRegistrationNumber, companyTaxId, companyWebsite, street1,

@@ -4,8 +4,6 @@ from ucrmapiwrap.config_reader import config
 
 class UCRMServiceDevice(UCRMBase):
     url = config.BASE_URL + 'clients/services/service-devices'
-    headers = {'Content-Type': 'application/json',
-               'x-Auth-App-Key': config.WRITE_KEY}
 
     def __init__(self, *, interfaceId, vendorId, ipRange, macAddress, loginUsername,
                  sshPort, sendPingNotifications, pingNotificationUserId,
