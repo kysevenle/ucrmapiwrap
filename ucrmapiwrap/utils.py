@@ -43,3 +43,14 @@ def update_service_device_structs():
     file_name = f'{curdir}\\tests\\call_structs\\service_device.json'
     with open(file_name, 'w') as file:
         json.dump(service_device_struct, file)
+
+
+def main():
+    update_client_structs()
+    update_service_structs()
+    update_device_structs()
+    update_service_device_structs()
+
+
+if __name__ == '__main__':
+    main()
