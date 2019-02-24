@@ -8,8 +8,8 @@ from ucrmapiwrap.devices import UCRMDevices
 
 @pytest.fixture
 def device_from_api():
-    client = UCRMDevices()._devices_list[0]
-    return [*client]
+    device = UCRMDevices()[0]
+    return device
 
 
 @pytest.fixture
@@ -18,8 +18,8 @@ def device_from_json():
     file_name = f'{cur_dir}\\call_structs\\device.json'
     with open(file_name, 'r') as file:
         data = json.load(file)
-    return [*data]
+    return data
 
 
 def test_client_structure(device_from_api, device_from_json):
-    assert device_from_api == device_from_json
+    assert vars(device_from_api).keys() == device_from_json.keys()
