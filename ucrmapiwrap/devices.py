@@ -14,13 +14,16 @@ class UCRMDevices:
 
         response = requests.get(self.url, headers=self.headers)
         if response.status_code == 200:
-            self._devices_list = response.json()
+            self._devices_list = [UCRMDevice(**device) for device in response.json()]
         else:
             self.errors = response.json()
 
-        def __iter__(self):
-            for device in self._devices_list:
-                yield UCRMDevice(**device)
+    def __iter__(self):
+        for device in self._devices_list:
+            yield UCRMDevice(**device)
 
-        def __len__(self):
-            return len(self._devices_list)
+    def __len__(self):
+        return len(self._devices_list)
+
+    def __getitem__(self, position):
+        return self._devices_list[position]
