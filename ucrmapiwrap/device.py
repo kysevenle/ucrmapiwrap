@@ -1,9 +1,8 @@
-import requests
-
+from ucrmapiwrap.base import UCRMBase
 from ucrmapiwrap.config_reader import config
 
 
-class UCRMDevice:
+class UCRMDevice(UCRMBase):
     url = config.BASE_URL + 'devices'
     headers = {'Content-Type': 'application/json',
                'x-Auth-App-Key': config.WRITE_KEY}
@@ -28,13 +27,6 @@ class UCRMDevice:
         self.sendPingNotifications = sendPingNotifications
         self.pingNotificationUserId = pingNotificationUserId
         self.createSignalStatistics = createSignalStatistics
-
-    @classmethod
-    def from_api(cls, id):
-        url = f'{cls.url}/{id}'
-        response = requests.get(url, headers=cls.headers)
-        if response.status_code == 200:
-            return cls(**response.json())
 
     def __repr__(self):
         return str(vars(self))
