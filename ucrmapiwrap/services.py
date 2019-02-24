@@ -14,7 +14,7 @@ class UCRMServices:
 
         response = requests.get(self.url, headers=self.headers, params=params)
         if response.status_code == 200:
-            self._services_list = response.json()
+            self._services_list = [UCRMService(**service) for service in response.json()]
         else:
             self.errors = response.json()
 
@@ -24,3 +24,6 @@ class UCRMServices:
 
     def __len__(self):
         return len(self._services_list)
+
+    def __getitem__(self, position):
+        return self._services_list[position]
