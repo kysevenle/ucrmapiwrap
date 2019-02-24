@@ -62,3 +62,6 @@ class UCRMService:
         self.hasOutage = hasOutage
         self.fccBlockId = fccBlockId
         self.lastInvoicedDate = lastInvoicedDate
+
+    def __repr__(self):
+        return str(vars(self))
