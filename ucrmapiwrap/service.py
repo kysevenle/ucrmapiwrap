@@ -1,4 +1,10 @@
-class UCRMService:
+from ucrmapiwrap.base import UCRMBase
+from ucrmapiwrap.config_reader import config
+
+
+class UCRMService(UCRMBase):
+    url = config.BASE_URL + 'clients/services'
+
     def __init__(self, *, id, clientId, status, name, street1, street2, city, countryId,
                  stateId, zipCode, note, addressGpsLat, addressGpsLon, servicePlanId,
                  servicePlanPeriodId, price, hasIndividualPrice, totalPrice, currencyCode,
