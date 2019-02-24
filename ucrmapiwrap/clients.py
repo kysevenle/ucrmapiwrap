@@ -14,13 +14,16 @@ class UCRMClients:
 
         response = requests.get(self.url, headers=self.headers, params=params)
         if response.status_code == 200:
-            self._clients_list = response.json()
+            self._clients_list = [UCRMClient(**client) for client in response.json]
         else:
             self.errors = response.json()
 
     def __iter__(self):
         for client in self._clients_list:
-            yield UCRMClient(**client)
+            yield client
 
     def __len__(self):
         return len(self._clients_list)
+
+    def __getitem__(self, position):
+        return self._clients_list[position]
