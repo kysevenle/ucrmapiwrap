@@ -20,7 +20,7 @@ class UCRMServices:
 
     def __iter__(self):
         for service in self._services_list:
-            yield UCRMService(**service)
+            yield service
 
     def __len__(self):
         return len(self._services_list)
