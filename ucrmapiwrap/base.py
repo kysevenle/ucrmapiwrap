@@ -13,3 +13,9 @@ class UCRMBase:
         response = requests.get(url, headers=cls.headers)
         if response.status_code == 200:
             return cls(**response.json())
+
+    def patch(self):
+        url = f'{self.url}/{self.id}'
+        response = requests.patch(url=url, headers=self.headers, json=self.payload)
+        print(response)
+        return response
