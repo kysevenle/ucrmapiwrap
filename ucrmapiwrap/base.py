@@ -17,5 +17,4 @@ class UCRMBase:
     def patch(self):
         url = f'{self.url}/{self.id}'
         response = requests.patch(url=url, headers=self.headers, json=self.payload)
-        print(response)
         return response
