@@ -25,5 +25,22 @@ class UCRMServiceDevice(UCRMBase):
         self.serviceId = serviceId
         self.loginPassword = loginPassword
 
+    @property
+    def payload(self):
+        payload = {'interfaceId': self.interfaceId,
+                   'vendorId': self.vendorId,
+                   'ipRange': self.ipRange,
+                   'macAddress': self.macAddress,
+                   'loginUsername': self.loginUsername,
+                   'loginPassword': self.loginPassword,
+                   'sshPort': self.sshPort,
+                   'sendPingNotifications': self.sendPingNotifications,
+                   'pingNotificationUserId': self.pingNotificationUserId,
+                   'createPingStatistics': self.createPingStatistics,
+                   'createSignalStatistics': self.createSignalStatistics,
+                   'qosEnabled': self.qosEnabled,
+                   'qosDeviceIds': self.qosDeviceIds}
+        return payload
+
     def __repr__(self):
         return str(vars(self))
