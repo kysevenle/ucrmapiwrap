@@ -8,4 +8,6 @@ def remove_signal_stats():
     service_devices_with_ss = [service_device for service in service_devices for
                                service_device in service
                                if service_device.createSignalStatistics is True]
-    print(len(service_devices_with_ss))
+    for service_device in service_devices_with_ss:
+        service_device.createSignalStatistics = False
+        service_device.patch()
