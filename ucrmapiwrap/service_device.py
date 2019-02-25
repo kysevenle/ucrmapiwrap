@@ -29,7 +29,6 @@ class UCRMServiceDevice(UCRMBase):
     def payload(self):
         payload = {'interfaceId': self.interfaceId,
                    'vendorId': self.vendorId,
-                   'ipRange': self.ipRange,
                    'macAddress': self.macAddress,
                    'loginUsername': self.loginUsername,
                    'loginPassword': self.loginPassword,
